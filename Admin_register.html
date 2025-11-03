@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DK Education</title>
+    <link rel="stylesheet" href="static/css/Admin_register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="s1">
+        <div class="logo">
+            <h2><span>DK</span> Education</h2>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="h2.html">Home</a></li>
+                <li><a href="{{url_for('login')}}">Login</a></li>
+                <li><a href="#">Course</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="s2">
+        <div class="login">
+           <form name="myform" method="post" onsubmit="validateform()" >
+                <fieldset>
+                    <legend>Register</legend>
+                    <table>
+                        <tr>
+                            <td><label for="username">User Name:</label></td>
+                            <td><input type="text" id="username" placeholder="User name" name="username" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">Password:</label></td>
+                            <td><input type="password" id="password" placeholder="Password" name="password" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="confirmPassword">Confirm Password:</label></td>
+                            <td><input type="password" id="confirmPassword" placeholder="Confirm password" name="confirmpassword" required></td>
+                        </tr>
+                        <tr>
+                            <td><label for="contact">Contact:</label></td>
+                            <td><input type="text" id="contact" placeholder="Contact" name="contact" required></td>
+                        </tr>
+                        <tr>
+                            <td class="submit" colspan="2">
+                                <button type="submit">Sign up</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <h4>Already have an account?<a href="Admin_login.html">Login</a></h4>
+                    <script type="text/javascript">
+                    function validateform()
+                    {
+                        var password=document.myform.password.value;
+                        var comfirmpassword=document.myform.comfirmpassword.value;
+                        var txtPhone = document.myform.contact.value;
+                        var mobileno = /^((\\+91-?)|0)?[0-9]{10}$/;
+                        if(password.length<6)
+                            alert("Password must be at least 6 characters long.");
+                        else if(password!=comfirmpassword)
+                            alert("Passwords did not match");
+                        else if (!txtPhone.match(mobileno))
+                        {
+                            alert("Not a valid Phone Number");
+                        }
+                    }
+                    </script>
+                </fieldset>
+            </form>
+            {% if register %}
+            <script>
+                alert("Registered Successfully!");
+            </script>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

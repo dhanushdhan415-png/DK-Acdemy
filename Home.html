@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DK Education</title>
+    <link rel="stylesheet" type="text/css" href="static/css/Home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="s1">
+       <div class="logo">
+    <h2><span>DK</span> Education</h2>
+</div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Login.html">Login</a></li>
+                <li><a href="#">Course</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="s2">
+        <div class="s3">
+            <div class="box1">
+                <div>
+                    <h1>Welcome to <span>DK Education</span></h1>
+                    <button onclick="no1()">Join Now</button>
+                </div>
+            </div>
+
+            <div class="box2">
+                <div class="t1">
+                    <h2><span>Number of</span><br>Students</h2>
+                </div>
+                <div class="t2">
+                    <h2>
+                        <script>
+function no1()
+ {
+    let num = prompt("Enter the number of students:");
+    num = parseInt(num);
+    if (!isNaN(num) && num >= 0)
+    {
+        document.querySelector(".t2 h2").textContent = num;
+        alert("Number of students updated to " + num);
+    } else {
+        alert("Please enter a valid number.");
+    }
+}
+</script>00</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="s4">
+            <div class="box3">
+                <div class="a1"><div class="log">🎯</div><div class="tex">Focus</div></div>
+                <div class="a2"><div class="log">💡</div><div class="tex">Understand</div></div>
+                <div class="a3"><div class="log">🎓</div><div class="tex">Get Marks</div></div>
+            </div>
+
+            <div class="box4">
+                <h1>Courses Offered</h1>
+                <ul>
+                    <li>JEE Mains</li>
+                    <li>NEET</li>
+                    <li>CLAT</li>
+                    <li>TNPSC</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

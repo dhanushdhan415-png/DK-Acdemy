@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DK Education</title>
+    <link rel="stylesheet" href="static/css/Student_register.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="s1">
+        <div class="logo">
+            <h2><span>DK</span> Education</h2>
+        </div>
+
+        <div class="menu">
+            <ul>
+                <li><a href="#">Your progress</a></li>
+                <li><a href="#">Mark view</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="s2">
+        <div class="login">
+            <form name="myform" onsubmit="return validateform()">
+                <fieldset>
+                    <legend>Register</legend>
+                    <table>
+                        <tr>
+                            <td><label for="name">Name:</label></td>
+                            <td><input type="text" id="name" name="name" placeholder="Enter your name" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="dob">Date of Birth:</label></td>
+                            <td><input type="date" id="dob" name="dob" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="course">Course:</label></td>
+                            <td>
+                                <input type="text" id="course" name="course" placeholder="Select Course" list="courseList" required>
+                                <datalist id="courseList">
+                                    <option value="JEE-MAINS">
+                                    <option value="NEET">
+                                    <option value="GLAD">
+                                    <option value="TNPSC">
+                                </datalist>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="email">Email:</label></td>
+                            <td><input type="email" id="email" name="email" placeholder="Enter your email" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="contact">Contact:</label></td>
+                            <td><input type="text" id="contact" name="contact" placeholder="Enter 10-digit number" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="password">Password:</label></td>
+                            <td><input type="password" id="password" name="password" placeholder="Enter password" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="confirm">Confirm Password:</label></td>
+                            <td><input type="password" id="confirm" name="cpassword" placeholder="Confirm password" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label>Gender:</label></td>
+                            <td class="gender-options">
+                                <label><input type="radio" name="gender" value="Male" required> Male</label>
+                                <label><input type="radio" name="gender" value="Female"> Female</label>
+                                <label><input type="radio" name="gender" value="Other"> Other</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="address">Address:</label></td>
+                            <td><textarea name="address" id="address" class="address" placeholder="Address"></textarea></td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="2" class="submit">
+                                <button type="submit">Sign Up</button>
+                            </td>
+                        </tr>
+                    </table>
+                    <h4>Already have an account? <a href="Student_login.html">Login</a></h4>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <script>
+        function validateform() {
+            var password = document.myform.password.value;
+            var confirm = document.myform.confirm.value;
+            var phone = document.myform.contact.value;
+            var mobilePattern = /^[0-9]{10}$/;
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+            if (password !== confirm) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            if (!phone.match(mobilePattern)) {
+                alert("Enter a valid 10-digit phone number.");
+                return false;
+            }
+            alert("Registration Successful!");
+            return true;
+        }
+    </script>
+</body>
+</html>
